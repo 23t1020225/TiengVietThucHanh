@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luyện Kĩ Năng Dùng Từ – Tiếng Việt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:   #1a2744;
+    --navy-light: #253561;
+    --gold:   #f0c642;
+    --gold-soft: #fdf3c0;
+    --cream:  #fafaf8;
+    --sidebar-bg: #e8ecf0;
+    --text:   #1c1c1e;
+    --muted:  #5f6b7a;
+    --border: #d4dae3;
+    --answer-bg: #f0f6ff;
+    --answer-border: #3a6fd8;
+    --tag-bg: #dbeafe;
+    --tag-text: #1d4ed8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* ─── HEADER ─── */
+  header {
+    background: var(--navy);
+    color: #fff;
+    padding: 0 1.5rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,.25);
+  }
+  .menu-btn {
+    display: none;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    color: #fff;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s;
+  }
+  .menu-btn:hover, .menu-btn:active {
+    background: rgba(255,255,255,0.25);
+  }
+  .header-icon {
+    width: 36px; height: 36px;
+    background: var(--gold);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; flex-shrink: 0;
+  }
+  .header-titles {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .header-title {
+    font-size: 0.98rem;
+    font-weight: 600;
+    letter-spacing: .01em;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .header-sub { font-size: .72rem; color: #94a3c0; font-weight: 400; }
+  .header-badge {
+    margin-left: auto;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: .7rem;
+    font-weight: 700;
+    padding: .25rem .65rem;
+    border-radius: 20px;
+    letter-spacing: .03em;
+    white-space: nowrap;
+  }
+
+  /* ─── LAYOUT ─── */
+  .layout {
+    display: flex;
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  }
+
+  /* ─── SIDEBAR ─── */
+  aside {
+    width: 230px;
+    flex-shrink: 0;
+  }
+  .sidebar-sticky {
+    position: sticky;
+    top: 80px;
+    background: var(--sidebar-bg);
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid var(--border);
+  }
+  .sidebar-header {
+    font-size: .7rem;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 0 .25rem .75rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: .75rem;
+  }
+  .sidebar-section { margin-bottom: 1rem; }
+  .sidebar-section-label {
+    font-size: .68rem;
+    font-weight: 700;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    padding: .25rem .5rem;
+    background: var(--navy);
+    color: var(--gold);
+    border-radius: 4px;
+    margin-bottom: .4rem;
+    display: block;
+  }
+  .sidebar-link {
+    display: block;
+    padding: .35rem .6rem;
+    font-size: .8rem;
+    color: var(--muted);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background .15s, color .15s;
+    line-height: 1.35;
+  }
+  .sidebar-link:hover {
+    background: var(--navy);
+    color: #fff;
+  }
+  .sidebar-link.active {
+    background: var(--navy);
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* ─── MAIN CONTENT ─── */
+  main { flex: 1; min-width: 0; }
+
+  .part-header {
+    background: var(--navy);
+    color: #fff;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .part-header::after {
+    content: '';
+    position: absolute;
+    right: -20px; top: -20px;
+    width: 120px; height: 120px;
+    background: rgba(240,198,66,.15);
+    border-radius: 50%;
+  }
+  .part-header::before {
+    content: '';
+    position: absolute;
+    right: 40px; bottom: -30px;
+    width: 80px; height: 80px;
+    background: rgba(240,198,66,.08);
+    border-radius: 50%;
+  }
+  .part-tag {
+    font-size: .7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--gold);
+    margin-bottom: .4rem;
+  }
+  .part-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: .3rem;
+  }
+  .part-desc { font-size: .85rem; color: #94a3c0; }
+
+  /* ─── EXERCISE CARD ─── */
+  .exercise {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    scroll-margin-top: 80px;
+  }
+  .exercise-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid transparent;
+    transition: background .15s;
+  }
+  .exercise-header:hover { background: #f8f9fb; }
+  .exercise-header.open { border-bottom-color: var(--border); }
+  .ex-num {
+    width: 36px; height: 36px;
+    background: var(--navy);
+    color: var(--gold);
+    font-size: .8rem;
+    font-weight: 700;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .ex-title { font-size: .95rem; font-weight: 600; flex: 1; line-height: 1.4; }
+  .ex-chevron {
+    color: var(--muted);
+    font-size: .9rem;
+    transition: transform .2s;
+    flex-shrink: 0;
+  }
+  .exercise-header.open .ex-chevron { transform: rotate(180deg); }
+
+  .exercise-body { padding: 1.5rem; display: none; }
+  .exercise-body.open { display: block; }
+
+  /* Question box */
+  .question-box {
+    background: var(--gold-soft);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: .9rem 1.1rem;
+    margin-bottom: 1.25rem;
+    font-size: .88rem;
+    line-height: 1.65;
+    color: #5a4a00;
+  }
+  .question-box strong { font-weight: 700; }
+
+  /* Answer */
+  .answer-label {
+    font-size: .68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--answer-border);
+    margin-bottom: .6rem;
+  }
+
+  /* Prose */
+  .prose { font-size: .9rem; line-height: 1.8; }
+  .prose p { margin-bottom: .8rem; }
+  .prose ul { padding-left: 1.4rem; margin-bottom: .9rem; }
+  .prose li { margin-bottom: .4rem; }
+  .prose strong { font-weight: 700; color: var(--navy); }
+  .prose em { font-style: italic; color: #374151; }
+
+  /* Table */
+  .tbl-wrap { overflow-x: auto; margin-bottom: 1rem; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .85rem;
+  }
+  thead tr { background: var(--navy); color: #fff; }
+  thead th { padding: .6rem 1rem; text-align: left; font-weight: 600; font-size: .8rem; }
+  tbody tr:nth-child(even) { background: #f4f6fa; }
+  tbody td { padding: .55rem 1rem; border-bottom: 1px solid #e5e9f0; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  td.highlight { font-weight: 700; color: var(--navy-light); }
+
+  /* Sub-heading inside exercise */
+  .sub-head {
+    font-size: .88rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 1.2rem 0 .5rem;
+    padding-bottom: .3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Tag */
+  .tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    font-size: .7rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 20px;
+    margin-right: .3rem;
+    margin-bottom: .3rem;
+  }
+
+  /* Verse block */
+  .verse {
+    background: #f8f9fb;
+    border-radius: 8px;
+    padding: .9rem 1.2rem;
+    font-style: italic;
+    font-size: .88rem;
+    line-height: 1.9;
+    color: #374151;
+    margin-bottom: .8rem;
+  }
+
+  /* Answer item */
+  .ans-item {
+    display: flex;
+    gap: .75rem;
+    padding: .65rem .9rem;
+    border-radius: 8px;
+    margin-bottom: .5rem;
+    background: var(--answer-bg);
+    font-size: .88rem;
+    line-height: 1.6;
+    border-left: 3px solid var(--answer-border);
+  }
+  .ans-item .word { font-weight: 700; color: var(--navy); flex-shrink: 0; min-width: 130px; }
+  .ans-item .def { color: #374151; }
+  .ans-item .ex-sent { display: block; font-style: italic; color: var(--muted); font-size: .82rem; margin-top: .2rem; }
+
+  /* Scroll to top */
+  #back-top {
+    position: fixed;
+    bottom: 2rem; right: 2rem;
+    width: 44px; height: 44px;
+    background: var(--navy);
+    color: var(--gold);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,.25);
+    opacity: 0;
+    transition: opacity .2s;
+    z-index: 99;
+  }
+  #back-top.show { opacity: 1; }
+  #back-top:hover { background: var(--navy-light); }
+
+  /* Progress bar */
+  .progress-wrap { margin-bottom: .75rem; }
+  .progress-label { font-size: .72rem; color: var(--muted); margin-bottom: .25rem; }
+  .progress-bar {
+    height: 5px;
+    background: #dde3ec;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--navy), #3a6fd8);
+    border-radius: 3px;
+    width: 0%;
+    transition: width .4s;
+  }
+
+  /* ─── QUICK TOOLBAR ─── */
+  .toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    background: #fff;
+    padding: 0.65rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .toolbar-info {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .toolbar-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .btn-tool {
+    background: var(--answer-bg);
+    color: var(--tag-text);
+    border: 1px solid #bfdbfe;
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    user-select: none;
+  }
+  .btn-tool:hover {
+    background: #dbeafe;
+    border-color: #93c5fd;
+  }
+
+  /* ─── MOBILE DRAWER & OVERLAY ─── */
+  .drawer-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(2px);
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+  .drawer-overlay.active {
+    display: block;
+    opacity: 1;
+  }
+  .drawer-top-bar {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .drawer-close-btn {
+    background: #f1f5f9;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+  }
+
+  /* ─── FLOATING MENU BUTTON (MOBILE) ─── */
+  .floating-menu-btn {
+    display: none;
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.25rem;
+    background: var(--navy);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 30px;
+    padding: 0.6rem 1rem;
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.28);
+    z-index: 99;
+    align-items: center;
+    gap: 0.4rem;
+    transition: transform 0.15s, background 0.15s;
+  }
+  .floating-menu-btn:hover { background: var(--navy-light); }
+  .floating-menu-btn:active { transform: scale(0.96); }
+
+  /* ─── RESPONSIVE BREAKPOINTS ─── */
+  @media (max-width: 860px) {
+    .menu-btn { display: inline-flex; }
+    .floating-menu-btn { display: inline-flex; }
+
+    .layout {
+      padding: 1.25rem 1rem;
+      gap: 1rem;
+    }
+
+    aside {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 290px;
+      max-width: 85vw;
+      height: 100vh;
+      height: 100dvh;
+      background: #fff;
+      z-index: 999;
+      transform: translateX(-105%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: none;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 1.25rem 1rem;
+    }
+    aside.open {
+      transform: translateX(0);
+      box-shadow: 8px 0 32px rgba(0,0,0,0.25);
+    }
+    .sidebar-sticky {
+      position: static;
+      background: transparent;
+      padding: 0;
+      border: none;
+    }
+    .drawer-top-bar { display: flex; }
+  }
+
+  @media (max-width: 640px) {
+    header {
+      padding: 0 0.85rem;
+      height: 56px;
+      gap: 0.65rem;
+    }
+    .header-icon { width: 32px; height: 32px; font-size: 1.05rem; }
+    .header-title { font-size: 0.88rem; }
+    .header-sub { font-size: 0.68rem; }
+    .header-badge { font-size: 0.65rem; padding: 0.2rem 0.5rem; }
+
+    .layout {
+      padding: 0.75rem 0.5rem;
+    }
+
+    .part-header {
+      padding: 1.2rem 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    .part-title { font-size: 1.15rem; }
+    .part-desc { font-size: 0.8rem; }
+
+    .toolbar {
+      padding: 0.6rem 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .toolbar-info { width: 100%; margin-bottom: 0.2rem; }
+    .toolbar-actions { width: 100%; justify-content: stretch; }
+    .btn-tool { flex: 1; justify-content: center; padding: 0.45rem 0.5rem; }
+
+    .exercise {
+      margin-bottom: 0.85rem;
+      border-radius: 10px;
+      scroll-margin-top: 66px;
+    }
+    .exercise-header {
+      padding: 0.8rem 0.85rem;
+      gap: 0.65rem;
+    }
+    .ex-num {
+      width: 30px;
+      height: 30px;
+      font-size: 0.75rem;
+      border-radius: 6px;
+    }
+    .ex-title {
+      font-size: 0.88rem;
+      line-height: 1.35;
+    }
+    .exercise-body {
+      padding: 1rem 0.85rem;
+    }
+
+    .question-box {
+      padding: 0.75rem 0.85rem;
+      font-size: 0.84rem;
+      line-height: 1.55;
+      margin-bottom: 1rem;
+    }
+
+    .ans-item {
+      flex-direction: column;
+      gap: 0.35rem;
+      padding: 0.65rem 0.8rem;
+      margin-bottom: 0.45rem;
+    }
+    .ans-item .word {
+      min-width: 0;
+      font-size: 0.88rem;
+    }
+    .ans-item .def {
+      font-size: 0.84rem;
+    }
+
+    .tbl-wrap {
+      margin-bottom: 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    table {
+      font-size: 0.8rem;
+      min-width: 460px;
+    }
+    thead th {
+      padding: 0.5rem 0.65rem;
+      font-size: 0.75rem;
+    }
+    tbody td {
+      padding: 0.5rem 0.65rem;
+    }
+
+    #back-top {
+      bottom: 1.25rem;
+      right: 1rem;
+      width: 40px;
+      height: 40px;
+      font-size: 1.1rem;
+    }
+    .floating-menu-btn {
+      bottom: 1.25rem;
+      left: 1rem;
+      padding: 0.5rem 0.85rem;
+      font-size: 0.78rem;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .header-sub { display: none; }
+    .header-badge { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <button id="mobileMenuBtn" class="menu-btn" onclick="toggleDrawer()" aria-label="Mở mục lục bài tập" title="Mục lục bài tập">☰</button>
+  <div class="header-icon">📖</div>
+  <div class="header-titles">
+    <div class="header-title">Luyện Kĩ Năng Dùng Từ</div>
+    <div class="header-sub">Tiếng Việt – Phần hai</div>
+  </div>
+  <span class="header-badge">28 Bài tập</span>
+</header>
+
+<!-- BACKDROP OVERLAY FOR MOBILE DRAWER -->
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+
+<!-- FLOATING MENU BUTTON FOR MOBILE -->
+<button class="floating-menu-btn" id="floatingMenuBtn" onclick="openDrawer()" title="Xem danh sách bài tập">
+  <span>📑 Mục lục bài tập</span>
+</button>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside id="sidebarDrawer">
+    <div class="drawer-top-bar">
+      <strong style="font-size:0.9rem; color:var(--navy);">📑 Mục lục bài tập</strong>
+      <button class="drawer-close-btn" onclick="closeDrawer()" title="Đóng">✕</button>
+    </div>
+    <div class="sidebar-sticky">
+      <div class="sidebar-header">Mục lục bài tập</div>
+
+      <div class="progress-wrap">
+        <div class="progress-label">Tiến độ đọc</div>
+        <div class="progress-bar"><div class="progress-fill" id="readProgress"></div></div>
+      </div>
+
+      <div class="sidebar-section">
+        <span class="sidebar-section-label">Phần I – Từ vựng</span>
+        <a href="#bt-1-1" class="sidebar-link">BT 1 – Từ láy (Truyện Kiều)</a>
+        <a href="#bt-1-2" class="sidebar-link">BT 2 – Từ đơn / từ ghép</a>
+        <a href="#bt-1-3" class="sidebar-link">BT 3 – Từ đồng nghĩa</a>
+        <a href="#bt-1-4" class="sidebar-link">BT 4 – Chọn từ đúng</a>
+        <a href="#bt-1-5" class="sidebar-link">BT 5 – Từ phù hợp nhất</a>
+        <a href="#bt-1-6" class="sidebar-link">BT 6 – Từ nhiều nghĩa</a>
+        <a href="#bt-1-7" class="sidebar-link">BT 7 – Từ chỉ loại</a>
+        <a href="#bt-1-8" class="sidebar-link">BT 8 – Từ mượn</a>
+        <a href="#bt-1-9" class="sidebar-link">BT 9 – Từ Hán Việt</a>
+        <a href="#bt-1-10" class="sidebar-link">BT 10 – Từ địa phương</a>
+        <a href="#bt-1-11" class="sidebar-link">BT 11 – Từ đơn phong cách</a>
+        <a href="#bt-1-12" class="sidebar-link">BT 12 – Thành ngữ</a>
+        <a href="#bt-1-13" class="sidebar-link">BT 13 – Thành ngữ Kiều</a>
+      </div>
+
+      <div class="sidebar-section">
+        <span class="sidebar-section-label">Phần II – Dùng từ</span>
+        <a href="#bt-2-1" class="sidebar-link">BT 1 – Nghĩa của xuân, hoa</a>
+        <a href="#bt-2-2" class="sidebar-link">BT 2 – Cải tạo / cải tiến…</a>
+        <a href="#bt-2-3" class="sidebar-link">BT 3 – Trung bình / trung lập…</a>
+        <a href="#bt-2-4" class="sidebar-link">BT 4 – Yếu tố "tử"</a>
+        <a href="#bt-2-5" class="sidebar-link">BT 5 – Xác định từ</a>
+        <a href="#bt-2-6" class="sidebar-link">BT 6 – Đặt câu làm rõ nghĩa</a>
+        <a href="#bt-2-7" class="sidebar-link">BT 7 – Sắc thái ý nghĩa</a>
+        <a href="#bt-2-8" class="sidebar-link">BT 8 – Đối thủ / kẻ thù…</a>
+        <a href="#bt-2-9" class="sidebar-link">BT 9 – Phân biệt nghĩa</a>
+        <a href="#bt-2-10" class="sidebar-link">BT 10 – Yếu tố báo / bá</a>
+        <a href="#bt-2-11" class="sidebar-link">BT 11 – Yếu tố Hán Việt</a>
+        <a href="#bt-2-13" class="sidebar-link">BT 13 – Đặt câu từ ngữ</a>
+        <a href="#bt-2-14" class="sidebar-link">BT 14 – Giải thích thành ngữ</a>
+        <a href="#bt-2-15" class="sidebar-link">BT 15 – Chữa lỗi dùng từ</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- ════════ PHẦN I ════════ -->
+    <div class="part-header">
+      <div class="part-tag">Phần I</div>
+      <div class="part-title">Từ và Từ Vựng Tiếng Việt</div>
+      <div class="part-desc">Từ láy · Từ ghép · Đồng nghĩa · Từ mượn · Thành ngữ · Tục ngữ</div>
+    </div>
+
+    <!-- QUICK ACTIONS TOOLBAR -->
+    <div class="toolbar">
+      <div class="toolbar-info">💡 Tổng hợp đầy đủ 28 bài tập có giải thích chi tiết</div>
+      <div class="toolbar-actions">
+        <button class="btn-tool" onclick="expandAll()" title="Mở rộng tất cả bài tập">📂 Mở tất cả</button>
+        <button class="btn-tool" onclick="collapseAll()" title="Thu gọn tất cả bài tập">📁 Thu gọn</button>
+      </div>
+    </div>
+
+    <!-- BÀI 1 -->
+    <div class="exercise" id="bt-1-1">
+      <div class="exercise-header open" onclick="toggle(this)">
+        <div class="ex-num">1</div>
+        <div class="ex-title">Gạch dưới từ láy và nêu tác dụng trong đoạn thơ Truyện Kiều</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body open">
+        <div class="question-box">
+          Hãy gạch dưới những từ láy và nói rõ tác dụng của chúng trong đoạn thơ sau (Nguyễn Du, Truyện Kiều).
+        </div>
+        <div class="answer-label">Đáp án</div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Từ láy</th><th>Tác dụng</th></tr></thead>
+            <tbody>
+              <tr><td class="highlight">nô nức</td><td>Gợi không khí tưng bừng, đông vui náo nhiệt của ngày hội</td></tr>
+              <tr><td class="highlight">sắm sửa</td><td>Diễn tả việc chuẩn bị chu đáo, kỹ càng</td></tr>
+              <tr><td class="highlight">dập dìu</td><td>Gợi tả cảnh đông đúc, nhộn nhịp, người đi lại uyển chuyển</td></tr>
+              <tr><td class="highlight">ngổn ngang</td><td>Diễn tả cảnh bừa bộn, lộn xộn</td></tr>
+              <tr><td class="highlight">tà tà</td><td>Gợi tả bóng hoàng hôn xuống từ từ, nhẹ nhàng, thong thả</td></tr>
+              <tr><td class="highlight">thơ thẩn</td><td>Diễn tả dáng đi thẫn thờ, bước chân chậm rãi, vô định</td></tr>
+              <tr><td class="highlight">thanh thanh</td><td>Gợi sắc xanh nhạt, thanh mảnh, trong trẻo của ngọn cỏ</td></tr>
+              <tr><td class="highlight">nao nao</td><td>Diễn tả tâm trạng bâng khuâng, xao xuyến, có phần buồn</td></tr>
+              <tr><td class="highlight">nho nhỏ</td><td>Gợi tả nhịp cầu nhỏ bé, xinh xắn</td></tr>
+              <tr><td class="highlight">sè sè</td><td>Gợi tả nấm mộ thấp lè tè, hiu quạnh</td></tr>
+              <tr><td class="highlight">dàu dàu</td><td>Gợi tả màu cỏ úa vàng, héo tàn, gợi buồn</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="prose">
+          <p><strong>Tác dụng chung:</strong> Các từ láy góp phần gợi tả cảnh vật thiên nhiên sinh động và đặc biệt gợi lên tâm trạng bâng khuâng, man mác buồn của chị em Thúy Kiều khi chiều xuống, đồng thời dự báo những biến cố sắp xảy đến.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BÀI 2 -->
+    <div class="exercise" id="bt-1-2">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">2</div>
+        <div class="ex-title">Nêu sự khác nhau và đặt câu với các cặp từ</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">
+          Nêu sự khác nhau của các cặp từ dưới đây và đặt câu với chúng:<br>
+          <strong>học / học hành · chơi / chơi bời · nhà / nhà cửa · xe / xe pháo · đẹp / đẹp đẽ · xinh / xinh xắn · làm / làm lụng</strong>
+        </div>
+        <div class="answer-label">Đáp án</div>
+
+        <div class="ans-item">
+          <span class="word">học / học hành</span>
+          <span class="def"><em>học</em>: Từ đơn, hành động tiếp thu kiến thức nói chung.<br>
+          <em>học hành</em>: Từ ghép, nhấn mạnh việc học có hệ thống, chăm chỉ, có kết quả.
+          <span class="ex-sent">→ Bạn Nam học rất nhanh. / Con cái phải <strong>học hành</strong> chăm chỉ mới nên người.</span></span>
+        </div>
+        <div class="ans-item">
+          <span class="word">chơi / chơi bời</span>
+          <span class="def"><em>chơi</em>: Từ đơn, hoạt động vui vẻ, giải trí (trung tính).<br>
+          <em>chơi bời</em>: Mang sắc thái tiêu cực – chơi lang thang, lãng phí thời gian.
+          <span class="ex-sent">→ Trẻ em cần thời gian để chơi sau giờ học. / Anh ta suốt ngày <strong>chơi bời</strong>, không chịu làm việc.</span></span>
+        </div>
+        <div class="ans-item">
+          <span class="word">nhà / nhà cửa</span>
+          <span class="def"><em>nhà</em>: Từ đơn, công trình để ở.<br>
+          <em>nhà cửa</em>: Từ ghép, chỉ tài sản, cơ ngơi, khái quát hơn.
+          <span class="ex-sent">→ Gia đình tôi có một căn nhà nhỏ ở ngoại ô. / Sau bao năm cố gắng, anh ấy mới có <strong>nhà cửa</strong> đàng hoàng.</span></span>
+        </div>
+        <div class="ans-item">
+          <span class="word">xe / xe pháo</span>
+          <span class="def"><em>xe</em>: Từ đơn, phương tiện giao thông.<br>
+          <em>xe pháo</em>: Từ ghép, chỉ các phương tiện cơ giới, vũ khí (văn cảnh chiến tranh).
+          <span class="ex-sent">→ Anh ấy đi xe máy đến trường. / Tiếng <strong>xe pháo</strong> ầm ầm vang lên trong đêm chiến sự.</span></span>
+        </div>
+        <div class="ans-item">
+          <span class="word">đẹp / đẹp đẽ</span>
+          <span class="def"><em>đẹp</em>: Tính từ đơn, vẻ đẹp cơ bản.<br>
+          <em>đẹp đẽ</em>: Từ láy, nhấn mạnh đẹp hoàn hảo, đáng khen ngợi (cả vẻ ngoài lẫn hành động).
+          <span class="ex-sent">→ Bông hoa này thật đẹp. / Cử chỉ của anh ấy thật <strong>đẹp đẽ</strong> và đáng trân trọng.</span></span>
+        </div>
+        <div class="ans-item">
+          <span class="word">xinh / xinh xắn</span>
+          <span class="def"><em>xinh</em>: Vẻ đẹp nhỏ nhắn, dễ thương.<br>
+          <em>xinh xắn</em>: Từ láy, vẻ đẹp dịu dàng, gọn gàng, thường dùng cho trẻ em.
+          <span class="ex-sent">→ Bé gái ấy rất xinh. / Em bé mặc chiếc váy <strong>xinh xắn</strong> đến dự tiệc.</span></span>
+        </div>
+        <div class="ans-item">
+          <span class="word">làm / làm lụng</span>
+          <span class="def"><em>làm</em>: Từ đơn, thực hiện công việc nói chung.<br>
+          <em>làm lụng</em>: Từ láy nghĩa, nhấn mạnh làm vất vả, cực nhọc, thường xuyên.
+          <span class="ex-sent">→ Anh ấy làm việc ở công ty. / Cả đời bà <strong>làm lụng</strong> vất vả để nuôi con.</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BÀI 3 -->
+    <div class="exercise" id="bt-1-3">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">3</div>
+        <div class="ex-title">Tìm từ đồng nghĩa hoặc gần nghĩa</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Tìm những từ đồng nghĩa hoặc gần nghĩa với các từ sau (mỗi từ tìm ít nhất 3 từ).</div>
+        <div class="answer-label">Đáp án</div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Từ gốc</th><th>Từ đồng nghĩa / gần nghĩa</th></tr></thead>
+            <tbody>
+              <tr><td class="highlight">nghĩ</td><td>ngẫm nghĩ, suy nghĩ, cân nhắc, suy xét, suy tư, trầm tư, nghĩ ngợi, chiêm nghiệm</td></tr>
+              <tr><td class="highlight">mang</td><td>đem, xách, đeo, vác, cõng, ôm, bê, gánh, chở, tải</td></tr>
+              <tr><td class="highlight">chết</td><td>từ trần, tử vong, hi sinh, qua đời, mất, băng hà, tắt thở, nhắm mắt, ngã xuống</td></tr>
+              <tr><td class="highlight">niềng</td><td>nài nỉ, van xin, cầu xin, khẩn cầu, năn nỉ</td></tr>
+              <tr><td class="highlight">bọc</td><td>đùm, bao, gói, bao bọc, che chắn, phủ, bọc bộc</td></tr>
+              <tr><td class="highlight">bạn</td><td>bạn bè, bầu bạn, bạn hữu, chiến hữu, đồng môn, bạn đồng hành</td></tr>
+              <tr><td class="highlight">khổ sở</td><td>đau khổ, khổ cực, gian nan, vất vả, cực nhọc, khốn khổ, lao đao</td></tr>
+              <tr><td class="highlight">rách</td><td>rách nát, tả tơi, rách tươm, te tua, xơ xác, mòn rách</td></tr>
+              <tr><td class="highlight">hèn</td><td>hèn mọn, hèn hạ, hèn kém, thấp hèn, ti tiện, đê hèn</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- BÀI 4 -->
+    <div class="exercise" id="bt-1-4">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">4</div>
+        <div class="ex-title">Xác định từ phù hợp với nghĩa</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Hãy xác định xem từ nào phù hợp với nghĩa nêu bên dưới:<br><strong>kế tục, kế nghiệp, kế tự, kế thừa, kế cận, kế toán</strong></div>
+        <div class="answer-label">Đáp án</div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Nghĩa</th><th>Từ phù hợp</th></tr></thead>
+            <tbody>
+              <tr><td>a) Nối dõi</td><td class="highlight">kế tự</td></tr>
+              <tr><td>b) Tính toán, ghi chép tình hình tài chính của xí nghiệp, cơ quan</td><td class="highlight">kế toán</td></tr>
+              <tr><td>c) Tiếp tục sự nghiệp của cha ông để lại</td><td class="highlight">kế nghiệp</td></tr>
+              <tr><td>d) Thừa hưởng, giữ gìn và tiếp tục phát huy (cái có giá trị tinh thần)</td><td class="highlight">kế thừa</td></tr>
+              <tr><td>e) Ở vị trí công tác liền ngay sau lớp người trước, có thể thay thế lớp người trước</td><td class="highlight">kế cận</td></tr>
+              <tr><td>g) Làm tiếp, thực hiện tiếp phần công việc người trước đã làm cho khỏi bị đứt quãng</td><td class="highlight">kế tục</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- BÀI 5 -->
+    <div class="exercise" id="bt-1-5">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">5</div>
+        <div class="ex-title">Tìm một từ phù hợp nhất với nội dung</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Với mỗi nội dung dưới đây, hãy tìm một từ phù hợp nhất.</div>
+        <div class="answer-label">Đáp án</div>
+        <div class="ans-item">
+          <span class="word">nghĩa hiệp</span>
+          <span class="def">Có tinh thần quên mình vì việc nghĩa, cứu giúp người khi họ gặp khó khăn, hoạn nạn.</span>
+        </div>
+        <div class="ans-item">
+          <span class="word">nghĩa cử</span>
+          <span class="def">Việc làm, hành động vì nghĩa.</span>
+        </div>
+        <div class="ans-item">
+          <span class="word">nghĩa khí</span>
+          <span class="def">Chí khí của người làm việc nghĩa.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BÀI 6 -->
+    <div class="exercise" id="bt-1-6">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">6</div>
+        <div class="ex-title">Đặt câu với mỗi nghĩa của từ nhiều nghĩa</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Với mỗi nghĩa của các từ nhiều nghĩa dưới đây, hãy đặt một câu:<br><strong>a) Tránh &nbsp; b) Quay &nbsp; c) Giật &nbsp; d) Mất &nbsp; e) Sang</strong></div>
+        <div class="answer-label">Đáp án</div>
+
+        <div class="sub-head">a) Tránh</div>
+        <ul class="prose">
+          <li><em>Dời chỗ để khỏi vướng nhau:</em> Con đường hẹp, anh ấy <strong>tránh</strong> sang một bên để xe tải đi qua.</li>
+          <li><em>Chủ động khỏi tiếp xúc với điều không hay:</em> Cô ấy luôn <strong>tránh</strong> tiếp xúc với người hay nói xấu mình.</li>
+          <li><em>Tự giữ không làm điều gì:</em> Bạn phải biết <strong>tránh</strong> những cám dỗ trong cuộc sống.</li>
+        </ul>
+
+        <div class="sub-head">b) Quay</div>
+        <ul class="prose">
+          <li><em>Chuyển động quanh trục:</em> Chiếc quạt <strong>quay</strong> đều tạo ra làn gió mát.</li>
+          <li><em>Chuyển tiếp sang việc khác:</em> Sau khi giải quyết xong, anh ấy <strong>quay</strong> sang làm việc khác.</li>
+          <li><em>Xoay vốn kinh doanh:</em> Anh ta biết cách <strong>quay</strong> vốn để có lợi nhuận cao.</li>
+          <li><em>Hỏi vặn vẹo, căn kẽ:</em> Thầy giáo <strong>quay</strong> học sinh về bài học hôm qua rất kỹ.</li>
+        </ul>
+
+        <div class="sub-head">c) Giật</div>
+        <ul class="prose">
+          <li><em>Làm rời ra bằng động tác nhanh:</em> Gió mạnh <strong>giật</strong> tấm biển hiệu khỏi tường.</li>
+          <li><em>Chuyển động đột ngột rồi trở lại:</em> Nghe tiếng động lớn, anh ấy <strong>giật</strong> mình.</li>
+          <li><em>Giành được bằng nỗ lực:</em> Đội chúng tôi <strong>giật</strong> được chức vô địch sau trận đấu căng thẳng.</li>
+          <li><em>Vay ngắn hạn:</em> Anh ấy <strong>giật</strong> tạm tiền của bạn để đóng học phí.</li>
+        </ul>
+
+        <div class="sub-head">d) Mất</div>
+        <ul class="prose">
+          <li><em>Không còn thuộc về mình:</em> Tôi <strong>mất</strong> chiếc ví hôm qua.</li>
+          <li><em>Không có ở mình nữa:</em> Anh ấy <strong>mất</strong> hết tự tin sau thất bại đó.</li>
+          <li><em>Thời gian/công sức bỏ ra:</em> Công trình này <strong>mất</strong> ba năm mới hoàn thành.</li>
+          <li><em>Không còn sống nữa:</em> Ông nội tôi đã <strong>mất</strong> năm ngoái.</li>
+        </ul>
+
+        <div class="sub-head">e) Sang</div>
+        <ul class="prose">
+          <li><em>Di chuyển đến nơi gần:</em> Tôi <strong>sang</strong> nhà hàng xóm mượn cái búa.</li>
+          <li><em>Chuyển qua giai đoạn khác:</em> Mùa đông đã <strong>sang</strong> xuân, hoa đào bắt đầu nở.</li>
+          <li><em>Chuyển quyền sở hữu:</em> Ông ấy <strong>sang</strong> lại cửa hàng cho người em họ.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- BÀI 7 -->
+    <div class="exercise" id="bt-1-7">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">7</div>
+        <div class="ex-title">Điền từ chỉ loại vào chỗ trống</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Hãy dùng các từ <strong>cái, quyển, con, chiếc, đôi, tờ, pho, bức, nỗi, niềm, cơn, giấc, trận, lá</strong> để điền vào chỗ trống cho phù hợp.</div>
+        <div class="answer-label">Đáp án</div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Chỗ trống</th><th>Từ chỉ loại</th><th>Chỗ trống</th><th>Từ chỉ loại</th></tr></thead>
+            <tbody>
+              <tr><td>… vui</td><td class="highlight">niềm vui</td><td>… mưa</td><td class="highlight">cơn mưa</td></tr>
+              <tr><td>… buồn</td><td class="highlight">nỗi buồn</td><td>… vui (2)</td><td class="highlight">niềm vui</td></tr>
+              <tr><td>… giấy</td><td class="highlight">tờ giấy</td><td>… sung sướng</td><td class="highlight">niềm sung sướng</td></tr>
+              <tr><td>… sách</td><td class="highlight">quyển sách</td><td>… thuyền</td><td class="highlight">con thuyền</td></tr>
+              <tr><td>… guốc</td><td class="highlight">đôi guốc</td><td>… cá</td><td class="highlight">con cá</td></tr>
+              <tr><td>… cặp</td><td class="highlight">cái cặp</td><td>… tượng</td><td class="highlight">pho tượng</td></tr>
+              <tr><td>… ác mộng</td><td class="highlight">cơn ác mộng</td><td>… kéo</td><td class="highlight">cái kéo</td></tr>
+              <tr><td>… mơ</td><td class="highlight">giấc mơ</td><td>… bàn</td><td class="highlight">cái bàn</td></tr>
+              <tr><td>… máy bay</td><td class="highlight">chiếc máy bay</td><td>… xe</td><td class="highlight">chiếc xe</td></tr>
+              <tr><td>… sông</td><td class="highlight">con sông</td><td>… lịch</td><td class="highlight">tờ lịch</td></tr>
+              <tr><td>… tem</td><td class="highlight">con tem</td><td>… thư</td><td class="highlight">bức thư</td></tr>
+              <tr><td>… cờ</td><td class="highlight">lá cờ</td><td></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- BÀI 8 -->
+    <div class="exercise" id="bt-1-8">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">8</div>
+        <div class="ex-title">Gạch dưới từ mượn trong đoạn trích</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Hãy gạch dưới những từ mượn có trong đoạn trích về karaoke.</div>
+        <div class="answer-label">Đáp án</div>
+        <div class="verse">
+          "… Chỉ cần có đầu <u><strong>vi-đê-ô</strong></u>, dàn <u><strong>âm li</strong></u> và <u><strong>mi-crô</strong></u> là có thể hát được <u><strong>ka-ra-ô-kê</strong></u>. Người chơi cầm <u><strong>mi-crô</strong></u> và hát theo các bài hát có nhạc đệm. <u><strong>Băng</strong></u> <u><strong>ka-ra-ô-kê</strong></u> có lồng hình các ca sĩ và phong cảnh để hấp dẫn người chơi…"
+        </div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Từ mượn</th><th>Nguồn gốc</th><th>Nghĩa</th></tr></thead>
+            <tbody>
+              <tr><td class="highlight">vi-đê-ô</td><td>Tiếng Anh: <em>video</em></td><td>Thiết bị ghi/phát hình ảnh</td></tr>
+              <tr><td class="highlight">âm li</td><td>Tiếng Pháp: <em>ampli</em></td><td>Bộ khuếch đại âm thanh</td></tr>
+              <tr><td class="highlight">mi-crô</td><td>Tiếng Anh/Pháp: <em>micro</em></td><td>Micrô thu tiếng</td></tr>
+              <tr><td class="highlight">ka-ra-ô-kê</td><td>Tiếng Nhật: <em>カラオケ</em></td><td>Hình thức hát theo nhạc nền</td></tr>
+              <tr><td class="highlight">băng</td><td>Tiếng Anh: <em>band/tape</em></td><td>Cuộn băng ghi âm/hình</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- BÀI 9 -->
+    <div class="exercise" id="bt-1-9">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">9</div>
+        <div class="ex-title">Gạch dưới từ Hán Việt trong các đoạn trích</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Gạch dưới những từ Hán Việt có trong những đoạn trích dưới đây.</div>
+        <div class="answer-label">Đáp án</div>
+        <div class="sub-head">Đoạn 1 – Phạm Văn Đồng (về Nguyễn Đình Chiểu)</div>
+        <div class="prose">
+          <p>Các từ Hán Việt: <span class="tag">thiên chức</span> <span class="tag">trọng</span> <span class="tag">chức trách</span> <span class="tag">khinh miệt</span> <span class="tag">phi nghĩa</span> <span class="tag">văn chương</span></p>
+        </div>
+        <div class="sub-head">Đoạn 2 – Nguyễn Tuân (về Sông Đà)</div>
+        <div class="prose">
+          <p>Các từ Hán Việt: <span class="tag">tỉnh Vân Nam</span> <span class="tag">Li Tiên</span> <span class="tag">quốc tịch</span> <span class="tag">trưởng thành</span> <span class="tag">ngã ba</span> <span class="tag">biên giới</span> <span class="tag">chiều dài</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BÀI 10 -->
+    <div class="exercise" id="bt-1-10">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">10</div>
+        <div class="ex-title">Những từ nào là từ địa phương?</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Những từ nào trong các câu dưới đây là từ địa phương?</div>
+        <div class="answer-label">Đáp án</div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Câu thơ</th><th>Từ địa phương</th><th>Từ toàn dân</th></tr></thead>
+            <tbody>
+              <tr><td><em>"Trời ơi, em biết khi mô"</em></td><td class="highlight">khi mô</td><td>khi nào</td></tr>
+              <tr><td><em>"Rằng không có gái trên sông?"</em></td><td>—</td><td>(không có từ địa phương)</td></tr>
+              <tr><td><em>"O du kích nhỏ giương cao súng"</em></td><td class="highlight">o</td><td>cô</td></tr>
+              <tr><td><em>"Ai vô đó với đồng bào đồng chí"</em></td><td class="highlight">vô</td><td>vào</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- BÀI 11 -->
+    <div class="exercise" id="bt-1-11">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">11</div>
+        <div class="ex-title">Gạch dưới từ đơn phong cách trong hai đoạn văn</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Hãy gạch dưới những từ đơn phong cách trong hai đoạn văn dưới đây.</div>
+        <div class="answer-label">Đáp án</div>
+        <div class="sub-head">Đoạn 1 – Phong cách khoa học (về điện hở tức)</div>
+        <div class="prose">
+          <p>Từ đơn phong cách: <span class="tag">điện hở</span> <span class="tag">dòng điện</span> <span class="tag">dây nguội</span> <span class="tag">đồ điện</span> <span class="tag">ống dẫn nước</span></p>
+        </div>
+        <div class="sub-head">Đoạn 2 – Phong cách chính luận (về cơ chế thị trường)</div>
+        <div class="prose">
+          <p>Từ đơn phong cách: <span class="tag">cơ chế thị trường</span> <span class="tag">cạnh tranh lành mạnh</span> <span class="tag">hợp pháp</span> <span class="tag">lợi ích</span> <span class="tag">phát triển đất nước</span> <span class="tag">quản lí Nhà nước</span> <span class="tag">quyền tự chủ kinh doanh</span> <span class="tag">doanh nghiệp</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BÀI 12 -->
+    <div class="exercise" id="bt-1-12">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">12</div>
+        <div class="ex-title">Gạch dưới thành ngữ trong đoạn trích</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Gạch dưới các thành ngữ có trong đoạn trích sau (Báo Nhân dân).</div>
+        <div class="answer-label">Đáp án</div>
+        <div class="verse">"Có một bà già kia lười lao động, chỉ quanh quẩn ở nhà, <u><strong>con cà con kê</strong></u>, sinh lắm chuyện. Bà thóc mách, <u><strong>bới lông tìm vết</strong></u>, <u><strong>đơm đặt</strong></u> chuyện nọ, chuyện kia, gây xích mích với bà con làng xóm."</div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Thành ngữ</th><th>Nghĩa</th></tr></thead>
+            <tbody>
+              <tr><td class="highlight">con cà con kê</td><td>Nói dài dòng, lan man, lắm chuyện không đâu</td></tr>
+              <tr><td class="highlight">bới lông tìm vết</td><td>Cố ý tìm kiếm, bới móc những điều nhỏ nhặt để chê bai, hại người</td></tr>
+              <tr><td class="highlight">đơm đặt</td><td>Bịa đặt, nói sai sự thật để hại người khác</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- BÀI 13 -->
+    <div class="exercise" id="bt-1-13">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">13</div>
+        <div class="ex-title">Gạch dưới thành ngữ, tục ngữ trong Truyện Kiều</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Gạch dưới các thành ngữ, tục ngữ có trong những câu thơ dưới đây trích từ Truyện Kiều.</div>
+        <div class="answer-label">Đáp án</div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Câu thơ</th><th>Thành ngữ / Tục ngữ</th></tr></thead>
+            <tbody>
+              <tr><td><em>"Hổ sinh ra phận thơ đào / Công cha nghĩa mẹ kiếp nào trả xong"</em></td><td class="highlight">công cha nghĩa mẹ</td></tr>
+              <tr><td><em>"Hở môi ra cũng thẹn thùng…"</em></td><td class="highlight">hở môi</td></tr>
+              <tr><td><em>"Xót tình máu mủ thay lời nước non"</em></td><td class="highlight">tình máu mủ</td></tr>
+              <tr><td><em>"Chị dù thịt nát xương mòn / Ngậm cười chín suối hãy còn thơm lây"</em></td><td class="highlight">thịt nát xương mòn · ngậm cười chín suối</td></tr>
+              <tr><td><em>"Sống nhờ đất khách thác chôn quê người"</em></td><td class="highlight">sống nhờ đất khách thác chôn quê người</td></tr>
+              <tr><td><em>"Mạt cưa mướp đắng đôi bên một phường"</em></td><td class="highlight">mạt cưa mướp đắng</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════ PHẦN II ════════ -->
+    <div class="part-header" style="margin-top:3rem;">
+      <div class="part-tag">Phần II</div>
+      <div class="part-title">Những Yêu Cầu Chung Của Việc Dùng Từ</div>
+      <div class="part-desc">Dùng đúng âm thanh · Đúng nghĩa · Đúng ngữ pháp · Đúng phong cách</div>
+    </div>
+
+    <!-- P2 BÀI 1 -->
+    <div class="exercise" id="bt-2-1">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">1</div>
+        <div class="ex-title">Đặt câu với những nghĩa khác nhau của từ "xuân" và "hoa"</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Hãy đặt câu với những nghĩa khác nhau của từ: <strong>xuân, hoa</strong></div>
+        <div class="answer-label">Đáp án</div>
+        <div class="sub-head">a) xuân</div>
+        <ul class="prose">
+          <li><em>Mùa xuân (nghĩa gốc):</em> Mùa <strong>xuân</strong> năm nay đến sớm hơn mọi năm.</li>
+          <li><em>Tuổi trẻ, thanh xuân:</em> Cô ấy đang ở độ tuổi thanh <strong>xuân</strong> đẹp nhất.</li>
+          <li><em>Năm (tuổi):</em> Ông đã bước sang tuổi tám mươi <strong>xuân</strong>.</li>
+          <li><em>Sự tươi trẻ, phát đạt:</em> Nhờ chính sách đổi mới, đất nước đang <strong>xuân</strong> lên từng ngày.</li>
+        </ul>
+        <div class="sub-head">b) hoa</div>
+        <ul class="prose">
+          <li><em>Bộ phận của cây (nghĩa gốc):</em> Vườn nhà tôi có rất nhiều <strong>hoa</strong> đang nở.</li>
+          <li><em>Người đẹp, vẻ đẹp:</em> Nàng là <strong>hoa</strong> khôi của trường.</li>
+          <li><em>Hoa văn trang trí:</em> Chiếc áo thêu <strong>hoa</strong> rất đẹp.</li>
+          <li><em>Bọt, sủi bọt:</em> <strong>Hoa</strong> bia nổi lên trắng xóa trong cốc.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- P2 BÀI 2 -->
+    <div class="exercise" id="bt-2-2">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">2</div>
+        <div class="ex-title">Phân biệt nghĩa: cải tạo / cải tiến · tập tục / tập quán</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Phân biệt nghĩa và đặt câu với từng từ dưới đây.</div>
+        <div class="answer-label">Đáp án</div>
+        <div class="ans-item">
+          <span class="word">cải tạo</span>
+          <span class="def">Thay đổi cơ bản và toàn diện cho tốt hơn, hoặc giáo dục để thay đổi bản chất, lập trường.<br>
+          <span class="ex-sent">→ Nhà nước đã tiến hành <strong>cải tạo</strong> hệ thống nông nghiệp lạc hậu.</span></span>
+        </div>
+        <div class="ans-item">
+          <span class="word">cải tiến</span>
+          <span class="def">Sửa đổi, nâng cấp cho hoàn thiện hơn về kỹ thuật, phương pháp (không thay đổi cơ bản).<br>
+          <span class="ex-sent">→ Nhà máy đã <strong>cải tiến</strong> dây chuyền sản xuất để tăng năng suất.</span></span>
+        </div>
+        <div class="ans-item">
+          <span class="word">tập tục</span>
+          <span class="def">Thói quen lâu đời trong sinh hoạt xã hội, có tính bắt buộc nhất định (có thể tốt hoặc xấu).<br>
+          <span class="ex-sent">→ Tục thờ cúng tổ tiên là <strong>tập tục</strong> lâu đời của người Việt Nam.</span></span>
+        </div>
+        <div class="ans-item">
+          <span class="word">tập quán</span>
+          <span class="def">Thói quen được hình thành lâu dài, được mọi người thừa nhận (thường tích cực hơn).<br>
+          <span class="ex-sent">→ <strong>Tập quán</strong> canh tác của người dân nơi đây rất đặc sắc.</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- P2 BÀI 3 -->
+    <div class="exercise" id="bt-2-3">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">3</div>
+        <div class="ex-title">Phân biệt nghĩa qua đặt câu – trung bình/lập, trung thực/thành, nhân nghĩa/ái…</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Phân biệt nghĩa của các cặp từ dưới đây qua việc đặt câu.</div>
+        <div class="answer-label">Đáp án</div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Từ</th><th>Phân biệt</th><th>Câu ví dụ</th></tr></thead>
+            <tbody>
+              <tr><td class="highlight">trung bình</td><td>Ở mức giữa, không xuất sắc cũng không kém</td><td><em>Kết quả học tập của em ấy chỉ ở mức <strong>trung bình</strong>.</em></td></tr>
+              <tr><td class="highlight">trung lập</td><td>Không đứng về phía nào trong tranh chấp, xung đột</td><td><em>Thụy Sĩ là quốc gia <strong>trung lập</strong> nổi tiếng.</em></td></tr>
+              <tr><td class="highlight">trung thực</td><td>Thật thà, không dối trá (về phẩm chất)</td><td><em>Người <strong>trung thực</strong> luôn được mọi người tin tưởng.</em></td></tr>
+              <tr><td class="highlight">trung thành</td><td>Một lòng một dạ, không phản bội (về hành động)</td><td><em>Chú chó của tôi rất <strong>trung thành</strong> với chủ.</em></td></tr>
+              <tr><td class="highlight">nhân nghĩa</td><td>Lòng thương người kết hợp đạo lý (thiên về lý)</td><td><em>Ông ấy nổi tiếng là người sống <strong>nhân nghĩa</strong>.</em></td></tr>
+              <tr><td class="highlight">nhân ái</td><td>Lòng thương yêu con người (thiên về tình cảm)</td><td><em>Cô giáo có tấm lòng <strong>nhân ái</strong>, giúp học sinh nghèo.</em></td></tr>
+              <tr><td class="highlight">gửi</td><td>Nhờ chuyển hộ hoặc trông hộ</td><td><em>Tôi <strong>gửi</strong> thư cho bạn qua bưu điện.</em></td></tr>
+              <tr><td class="highlight">gửi gắm</td><td>Giao phó với lòng tin tưởng, kèm kỳ vọng, tình cảm</td><td><em>Bố mẹ <strong>gửi gắm</strong> bao kỳ vọng vào đứa con đi học xa.</em></td></tr>
+              <tr><td class="highlight">khẩu cung</td><td>Lời khai trước tòa</td><td><em>Bị cáo đã thay đổi <strong>khẩu cung</strong> nhiều lần.</em></td></tr>
+              <tr><td class="highlight">khẩu phần</td><td>Phần ăn chia cho mỗi người</td><td><em>Mỗi chiến sĩ nhận một <strong>khẩu phần</strong> lương thực.</em></td></tr>
+              <tr><td class="highlight">khẩu khí</td><td>Giọng điệu, cách nói (hàm ý mạnh mẽ)</td><td><em>Nghe <strong>khẩu khí</strong> của anh ta, ai cũng biết đây là người tự tin.</em></td></tr>
+              <tr><td class="highlight">khẩu lệnh</td><td>Lệnh bằng miệng (trong quân sự)</td><td><em>Sĩ quan hô <strong>khẩu lệnh</strong>, đội hình lập tức chỉnh tề.</em></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- P2 BÀI 4 -->
+    <div class="exercise" id="bt-2-4">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">4</div>
+        <div class="ex-title">Yếu tố "tử" trong các từ khác nhau như thế nào?</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Yếu tố <em>tử</em> trong các từ sau có gì khác nhau?<br>
+        <strong>a)</strong> tử trận, tử vong, tử thi, tự tử &nbsp;|&nbsp; <strong>b)</strong> đệ tử, phụ tử, mẫu tử</div>
+        <div class="answer-label">Đáp án</div>
+        <div class="ans-item">
+          <span class="word">Nhóm a – tử = "chết"</span>
+          <span class="def">
+            <strong>tử trận</strong>: chết trong chiến trận<br>
+            <strong>tử vong</strong>: chết chung, dùng trong y tế, thống kê<br>
+            <strong>tử thi</strong>: xác chết (<em>thi</em> = thân xác)<br>
+            <strong>tự tử</strong>: tự làm cho mình chết (<em>tự</em> = tự mình)
+          </span>
+        </div>
+        <div class="ans-item">
+          <span class="word">Nhóm b – tử = "con"</span>
+          <span class="def">
+            <strong>đệ tử</strong>: học trò, môn đệ (<em>đệ</em> = em)<br>
+            <strong>phụ tử</strong>: cha con (<em>phụ</em> = cha)<br>
+            <strong>mẫu tử</strong>: mẹ con (<em>mẫu</em> = mẹ)
+          </span>
+        </div>
+        <div class="prose"><p><strong>Kết luận:</strong> Yếu tố <em>tử</em> có hai nghĩa hoàn toàn khác nhau: nhóm a mang nghĩa <em>chết</em>, nhóm b mang nghĩa <em>con</em>.</p></div>
+      </div>
+    </div>
+
+    <!-- P2 BÀI 5 -->
+    <div class="exercise" id="bt-2-5">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">5</div>
+        <div class="ex-title">Xác định từ phù hợp với nghĩa (trung lưu, trung niên…)</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Hãy xác định từ phù hợp với nghĩa sau.</div>
+        <div class="answer-label">Đáp án</div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Nghĩa</th><th>Từ phù hợp</th></tr></thead>
+            <tbody>
+              <tr><td>Tầng lớp có tài sản ở mức giữa trong xã hội</td><td class="highlight">trung lưu</td></tr>
+              <tr><td>Người đã qua tuổi thanh niên nhưng chưa già</td><td class="highlight">trung niên</td></tr>
+              <tr><td>Đứng ở giữa hai bên đối lập, không theo hoặc không phụ thuộc vào bên nào</td><td class="highlight">trung lập</td></tr>
+              <tr><td>Ở giữa, có tính chất chuyển tiếp hoặc nối hai sự việc</td><td class="highlight">trung gian</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- P2 BÀI 6 -->
+    <div class="exercise" id="bt-2-6">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">6</div>
+        <div class="ex-title">Đặt câu làm rõ nghĩa (ý thức, cảm giác, đặc tính…)</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Với mỗi từ dưới đây hãy đặt một câu để làm rõ nghĩa của chúng.</div>
+        <div class="answer-label">Đáp án</div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Từ</th><th>Câu ví dụ</th></tr></thead>
+            <tbody>
+              <tr><td class="highlight">ý thức</td><td><em>Chúng ta cần nâng cao <strong>ý thức</strong> bảo vệ môi trường.</em></td></tr>
+              <tr><td class="highlight">ý tưởng</td><td><em>Đây là một <strong>ý tưởng</strong> sáng tạo, rất đáng để thực hiện.</em></td></tr>
+              <tr><td class="highlight">tư tưởng</td><td><em><strong>Tư tưởng</strong> Hồ Chí Minh là kim chỉ nam cho cách mạng Việt Nam.</em></td></tr>
+              <tr><td class="highlight">cảm giác</td><td><em>Tôi có <strong>cảm giác</strong> trời sắp mưa.</em></td></tr>
+              <tr><td class="highlight">cảm tính</td><td><em>Đừng quyết định theo <strong>cảm tính</strong>, hãy dựa trên lý trí.</em></td></tr>
+              <tr><td class="highlight">cảm quan</td><td><em>Bức tranh này đẹp về mặt <strong>cảm quan</strong> nhưng thiếu chiều sâu.</em></td></tr>
+              <tr><td class="highlight">ý niệm</td><td><em>Lúc còn nhỏ, tôi chưa có <strong>ý niệm</strong> gì về giá trị của thời gian.</em></td></tr>
+              <tr><td class="highlight">quan niệm</td><td><em><strong>Quan niệm</strong> về hạnh phúc của mỗi người mỗi khác.</em></td></tr>
+              <tr><td class="highlight">khái niệm</td><td><em><strong>Khái niệm</strong> "từ" trong tiếng Việt được định nghĩa rõ ràng trong ngôn ngữ học.</em></td></tr>
+              <tr><td class="highlight">đặc tính</td><td><em><strong>Đặc tính</strong> của vàng là không bị oxy hóa trong điều kiện thông thường.</em></td></tr>
+              <tr><td class="highlight">đặc điểm</td><td><em><strong>Đặc điểm</strong> nổi bật của ngôn ngữ thơ là tính nhạc và hình ảnh.</em></td></tr>
+              <tr><td class="highlight">đặc trưng</td><td><em>Áo dài là trang phục <strong>đặc trưng</strong> của người phụ nữ Việt Nam.</em></td></tr>
+              <tr><td class="highlight">thực tại</td><td><em>Chúng ta phải đối mặt với <strong>thực tại</strong> khắc nghiệt, không thể trốn tránh.</em></td></tr>
+              <tr><td class="highlight">thực trạng</td><td><em>Báo cáo đã nêu rõ <strong>thực trạng</strong> ô nhiễm môi trường hiện nay.</em></td></tr>
+              <tr><td class="highlight">hiện trạng</td><td><em>Đoàn kiểm tra đã ghi nhận <strong>hiện trạng</strong> của công trình trước khi nghiệm thu.</em></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- P2 BÀI 7 -->
+    <div class="exercise" id="bt-2-7">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">7</div>
+        <div class="ex-title">Phân biệt sắc thái ý nghĩa của các cặp từ</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Phân biệt sắc thái ý nghĩa của các cặp từ: <strong>ác/dữ · cáu/giận · căm/tức · yêu/thương · tươi tắn/tươi tỉnh/tươi đẹp/tươi vui · xum xuê/rườm rà/rậm rạp/rậm rịt</strong></div>
+        <div class="answer-label">Đáp án</div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Từ</th><th>Sắc thái ý nghĩa</th></tr></thead>
+            <tbody>
+              <tr><td class="highlight">ác</td><td>Bản chất xấu xa, tội lỗi mang tính ổn định, lâu dài</td></tr>
+              <tr><td class="highlight">dữ</td><td>Biểu hiện hung hăng, bạo lực trong khoảnh khắc cụ thể</td></tr>
+              <tr><td class="highlight">cáu</td><td>Giận nhẹ, bực bội thoáng qua, mức độ thấp</td></tr>
+              <tr><td class="highlight">giận</td><td>Tình cảm tiêu cực sâu hơn, có thể kéo dài</td></tr>
+              <tr><td class="highlight">căm</td><td>Mức độ mạnh hơn, kèm yếu tố thù hận (căm thù, căm ghét)</td></tr>
+              <tr><td class="highlight">tức</td><td>Bực bội, khó chịu, mức độ nhẹ hơn căm</td></tr>
+              <tr><td class="highlight">yêu</td><td>Tình cảm lãng mạn, say mê, thiên về cảm xúc mãnh liệt</td></tr>
+              <tr><td class="highlight">thương</td><td>Tình cảm thương hại, đồng cảm, bao dung, sâu lắng hơn</td></tr>
+              <tr><td class="highlight">tươi tắn</td><td>Vẻ mặt tươi, rạng rỡ, khỏe mạnh</td></tr>
+              <tr><td class="highlight">tươi tỉnh</td><td>Trông tỉnh táo, không uể oải (thường sau giấc ngủ)</td></tr>
+              <tr><td class="highlight">tươi đẹp</td><td>Cảnh vật tươi và đẹp, rực rỡ (thiên về thiên nhiên)</td></tr>
+              <tr><td class="highlight">tươi vui</td><td>Biểu hiện vui mừng, phấn khởi trên khuôn mặt</td></tr>
+              <tr><td class="highlight">xum xuê</td><td>Cây cối sum sê, nhiều lá cành, gợi sự phong phú</td></tr>
+              <tr><td class="highlight">rườm rà</td><td>Quá nhiều, rắc rối, dài dòng (thiên về tiêu cực)</td></tr>
+              <tr><td class="highlight">rậm rạp</td><td>Cây cối mọc dày, um tùm (rừng, bụi cây)</td></tr>
+              <tr><td class="highlight">rậm rịt</td><td>Rất dày đặc, um tùm đến mức khó len lỏi</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- P2 BÀI 8 -->
+    <div class="exercise" id="bt-2-8">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">8</div>
+        <div class="ex-title">Phân biệt nghĩa: đối thủ/đối phương/kẻ thù · tài liệu/tư liệu/hồ sơ · gián điệp/tình báo…</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Phân biệt nghĩa và đặt câu với các từ sau.</div>
+        <div class="answer-label">Đáp án</div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Từ</th><th>Nghĩa</th><th>Câu ví dụ</th></tr></thead>
+            <tbody>
+              <tr><td class="highlight">đối thủ</td><td>Người cạnh tranh trực tiếp (trung tính, thường trong thể thao/thi đấu)</td><td><em>Đội A là <strong>đối thủ</strong> mạnh nhất của chúng tôi năm nay.</em></td></tr>
+              <tr><td class="highlight">đối phương</td><td>Bên đối lập trong đàm phán hoặc chiến đấu (chính thức hơn)</td><td><em><strong>Đối phương</strong> đã từ chối đề nghị ngừng bắn.</em></td></tr>
+              <tr><td class="highlight">kẻ thù</td><td>Người/lực lượng thù địch, muốn hại ta</td><td><em>Chúng ta phải nhận ra <strong>kẻ thù</strong> thực sự của nhân dân.</em></td></tr>
+              <tr><td class="highlight">thù địch</td><td>(Tính từ) Mang tính chất thù nghịch, đối lập</td><td><em>Các thế lực <strong>thù địch</strong> luôn tìm cách phá hoại hòa bình.</em></td></tr>
+              <tr><td class="highlight">tài liệu</td><td>Văn bản dùng để tham khảo, học tập</td><td><em>Thư viện có nhiều <strong>tài liệu</strong> quý về lịch sử dân tộc.</em></td></tr>
+              <tr><td class="highlight">tư liệu</td><td>Nguồn thông tin gốc để nghiên cứu</td><td><em>Nhà nghiên cứu đã sưu tập nhiều <strong>tư liệu</strong> cổ quý giá.</em></td></tr>
+              <tr><td class="highlight">hồ sơ</td><td>Tập hợp giấy tờ chính thức của một người/vụ việc</td><td><em>Bạn cần nộp đầy đủ <strong>hồ sơ</strong> để xin việc làm.</em></td></tr>
+              <tr><td class="highlight">gián điệp</td><td>Người bí mật thu thập thông tin cho kẻ thù, phản bội Tổ quốc</td><td><em>Tên <strong>gián điệp</strong> bị bắt khi đang chụp tài liệu mật.</em></td></tr>
+              <tr><td class="highlight">tình báo</td><td>Hoạt động/tổ chức thu thập thông tin về kẻ thù</td><td><em>Cơ quan <strong>tình báo</strong> đã cung cấp thông tin kịp thời.</em></td></tr>
+              <tr><td class="highlight">thám báo</td><td>Người đi thám thính, do thám tình hình địch</td><td><em>Đội <strong>thám báo</strong> được phái đi trước khi bộ đội tấn công.</em></td></tr>
+              <tr><td class="highlight">trinh sát</td><td>Hoạt động đi tìm hiểu, quan sát tình hình địch, địa hình</td><td><em>Anh bộ đội <strong>trinh sát</strong> báo cáo tình hình cho chỉ huy.</em></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- P2 BÀI 9 -->
+    <div class="exercise" id="bt-2-9">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">9</div>
+        <div class="ex-title">Phân biệt nghĩa trong từng trường hợp: lặng, xôn xao, đường, thắm</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Hãy phân biệt nghĩa trong từng trường hợp sử dụng của các từ: <strong>lặng · xôn xao · đường · thắm</strong></div>
+        <div class="answer-label">Đáp án</div>
+
+        <div class="sub-head">a) lặng</div>
+        <ul class="prose">
+          <li><em>"Cây muốn lặng, gió chẳng đừng"</em> → <strong>lặng</strong> = yên tĩnh, không chuyển động (thuộc tính vật lý)</li>
+          <li><em>"Buồng không lặng ngắt như tờ"</em> → <strong>lặng</strong> = hoàn toàn im lặng, không có âm thanh (không gian)</li>
+          <li><em>"Mây núi hiu hiu chiều lảng lặng"</em> → <strong>lặng</strong> = nhẹ nhàng, trầm tịch, gợi buồn (sắc thái thơ)</li>
+        </ul>
+
+        <div class="sub-head">b) xôn xao</div>
+        <ul class="prose">
+          <li><em>"Gió lộng xôn xao sóng biển đưa đưa"</em> → <strong>xôn xao</strong> = chuyển động nhẹ, rì rào (tự nhiên)</li>
+          <li><em>"Chim rừng xôn xao gọi nhau về tổ"</em> → <strong>xôn xao</strong> = ồn ào, nhộn nhịp (âm thanh)</li>
+          <li><em>"Lòng xôn xao một niềm vui khó tả"</em> → <strong>xôn xao</strong> = xao xuyến, náo nức (tâm trạng)</li>
+        </ul>
+
+        <div class="sub-head">c) đường</div>
+        <ul class="prose">
+          <li><em>"Trên đường cái ung dung ta bước"</em> → <strong>đường</strong> = con đường giao thông cụ thể</li>
+          <li><em>"Đường cách mạng dài theo kháng chiến"</em> → <strong>đường</strong> = hướng đi, sự nghiệp (nghĩa trừu tượng)</li>
+          <li><em>"Đường xa nghĩ nỗi sau này mà kinh"</em> → <strong>đường</strong> = chặng đời phía trước</li>
+          <li><em>"Nói một đường, làm một nẻo"</em> → <strong>đường</strong> = cách, kiểu (trừu tượng)</li>
+          <li><em>"Đường ta đó tự do cuồn cuộn"</em> → <strong>đường</strong> = con đường tự do của dân tộc</li>
+        </ul>
+
+        <div class="sub-head">d) thắm</div>
+        <ul class="prose">
+          <li><em>"Hoa ghen thua thắm liễu hờn kém xanh"</em> → <strong>thắm</strong> = màu đỏ tươi, rực rỡ</li>
+          <li><em>"Tháng Tám mùa thu xanh thắm"</em> → <strong>thắm</strong> = đậm màu, mướt mát, xanh đậm</li>
+          <li><em>"Mây của ta trời thắm của ta"</em> → <strong>thắm</strong> = đẹp đẽ, tươi tốt, phong phú</li>
+          <li><em>"Có phải duyên nhau thì thắm lại"</em> → <strong>thắm</strong> = gắn bó, thắt chặt, bền chặt</li>
+          <li><em>"Đôi ta thắm tình duyên quê"</em> → <strong>thắm</strong> = sâu đậm, nồng nàn (về tình cảm)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- P2 BÀI 10 -->
+    <div class="exercise" id="bt-2-10">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">10</div>
+        <div class="ex-title">Nói rõ nghĩa của yếu tố "báo" và "bá"</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Hãy nói rõ nghĩa của các yếu tố sau: <strong>a) báo &nbsp; b) bá</strong></div>
+        <div class="answer-label">Đáp án</div>
+        <div class="sub-head">a) báo</div>
+        <div class="ans-item">
+          <span class="word">báo = đền đáp</span>
+          <span class="def">báo đáp, báo thù, báo ân, báo ứng, báo hiếu → đền đáp công ơn hoặc oán thù</span>
+        </div>
+        <div class="ans-item">
+          <span class="word">báo = thông báo</span>
+          <span class="def">báo chí, báo cáo, báo tang, báo hỉ → thông báo, truyền tin tức</span>
+        </div>
+        <div class="sub-head">b) bá</div>
+        <div class="ans-item">
+          <span class="word">bá = phát tán rộng</span>
+          <span class="def">bá cáo, truyền bá → phát tán rộng rãi, loan truyền</span>
+        </div>
+        <div class="ans-item">
+          <span class="word">bá = vương quyền</span>
+          <span class="def">bá chủ, bá vương → người đứng đầu thiên hạ, quyền lực tối cao</span>
+        </div>
+        <div class="ans-item">
+          <span class="word">bá = bá quyền</span>
+          <span class="def">bá quyền → quyền lực áp đặt lên người khác</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- P2 BÀI 11 -->
+    <div class="exercise" id="bt-2-11">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">11</div>
+        <div class="ex-title">Giải nghĩa yếu tố Hán Việt: can, trí, quan, kết</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Giải nghĩa yếu tố Hán Việt trong các từ sau.</div>
+        <div class="answer-label">Đáp án</div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Từ</th><th>Nghĩa yếu tố</th><th>Nghĩa cả từ</th></tr></thead>
+            <tbody>
+              <tr><td class="highlight">can thiệp</td><td>can = dính líu, tham gia vào</td><td>Xen vào chuyện người khác</td></tr>
+              <tr><td class="highlight">can đảm</td><td>can = gan (ẩn dụ nội tạng)</td><td>Có gan dạ, dũng cảm</td></tr>
+              <tr><td class="highlight">can gián</td><td>can = ngăn cản, khuyên can</td><td>Khuyên ngăn người trên làm điều sai</td></tr>
+              <tr><td class="highlight">can trường</td><td>can = gan ruột</td><td>Gan dạ, bền bỉ, không sợ khó khăn</td></tr>
+              <tr><td class="highlight">dân trí</td><td>trí = trí tuệ, hiểu biết</td><td>Trình độ hiểu biết của nhân dân</td></tr>
+              <tr><td class="highlight">trí thức</td><td>trí = tri thức, hiểu biết</td><td>Người có học vấn cao</td></tr>
+              <tr><td class="highlight">bố trí</td><td>trí = đặt, sắp xếp</td><td>Sắp đặt, tổ chức theo kế hoạch</td></tr>
+              <tr><td class="highlight">bài trí</td><td>trí = đặt, bày</td><td>Sắp xếp, trang trí đồ vật trong không gian</td></tr>
+              <tr><td class="highlight">tham quan</td><td>quan = nhìn, xem</td><td>Đi xem, tìm hiểu</td></tr>
+              <tr><td class="highlight">quan sát</td><td>quan = nhìn, xem</td><td>Chú ý nhìn, theo dõi</td></tr>
+              <tr><td class="highlight">quan ải</td><td>quan = cửa ải, kiểm soát biên giới</td><td>Cửa quan, ải biên giới</td></tr>
+              <tr><td class="highlight">quan hệ</td><td>quan = liên quan, dính líu</td><td>Mối liên hệ, tương quan</td></tr>
+              <tr><td class="highlight">kết quả</td><td>kết = hoàn thành, sinh ra</td><td>Điều đạt được sau quá trình</td></tr>
+              <tr><td class="highlight">kết duyên</td><td>kết = gắn kết</td><td>Kết hợp nên vợ chồng</td></tr>
+              <tr><td class="highlight">kết thúc</td><td>kết = kết lại</td><td>Chấm dứt, hoàn thành</td></tr>
+              <tr><td class="highlight">kết cục</td><td>kết = cuối cùng</td><td>Kết quả cuối cùng (thường tiêu cực)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- P2 BÀI 13 -->
+    <div class="exercise" id="bt-2-13">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">13</div>
+        <div class="ex-title">Đặt câu với từng từ ngữ</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Hãy đặt câu với từng từ ngữ dưới đây: đàm thoại/trò chuyện · cố nhân/bạn cũ · đơn phương/một phía · đại tu/sửa chữa lớn · giang san/sông núi</div>
+        <div class="answer-label">Đáp án</div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Từ</th><th>Câu ví dụ</th></tr></thead>
+            <tbody>
+              <tr><td class="highlight">đàm thoại</td><td><em>Cuộc <strong>đàm thoại</strong> giữa hai đoàn ngoại giao diễn ra trong không khí thân thiện.</em></td></tr>
+              <tr><td class="highlight">trò chuyện</td><td><em>Chúng tôi ngồi <strong>trò chuyện</strong> với nhau đến tận khuya.</em></td></tr>
+              <tr><td class="highlight">cố nhân</td><td><em>Gặp lại <strong>cố nhân</strong> sau bao năm xa cách, lòng bỗng dưng bùi ngùi.</em></td></tr>
+              <tr><td class="highlight">bạn cũ</td><td><em>Tôi tình cờ gặp lại <strong>bạn cũ</strong> hồi tiểu học ở siêu thị hôm qua.</em></td></tr>
+              <tr><td class="highlight">đơn phương</td><td><em>Việc <strong>đơn phương</strong> hủy hợp đồng sẽ gây thiệt hại lớn cho cả hai bên.</em></td></tr>
+              <tr><td class="highlight">một phía</td><td><em>Tình cảm <strong>một phía</strong> thường dẫn đến nỗi đau khó nói.</em></td></tr>
+              <tr><td class="highlight">đại tu</td><td><em>Chiếc xe cũ này cần phải <strong>đại tu</strong> toàn bộ mới có thể hoạt động trở lại.</em></td></tr>
+              <tr><td class="highlight">sửa chữa lớn</td><td><em>Tòa nhà phải tiến hành <strong>sửa chữa lớn</strong> sau trận lũ lụt.</em></td></tr>
+              <tr><td class="highlight">giang san</td><td><em>Các anh hùng xưa đã đổ máu xương để giữ gìn <strong>giang san</strong> cho muôn đời sau.</em></td></tr>
+              <tr><td class="highlight">sông núi</td><td><em><strong>Sông núi</strong> nước Nam quê hương tôi thật hùng vĩ và tươi đẹp.</em></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- P2 BÀI 14 -->
+    <div class="exercise" id="bt-2-14">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">14</div>
+        <div class="ex-title">Giải thích nghĩa của những thành ngữ</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Hãy giải thích nghĩa của những thành ngữ sau.</div>
+        <div class="answer-label">Đáp án</div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Thành ngữ</th><th>Nghĩa</th></tr></thead>
+            <tbody>
+              <tr><td class="highlight">Ăn vóc học hay</td><td>Muốn có vóc dáng tốt thì phải ăn uống đầy đủ; muốn giỏi giang thì phải chăm học. Mọi thứ đều cần nỗ lực, không có gì tự nhiên mà có.</td></tr>
+              <tr><td class="highlight">Bóng chim tăm cá</td><td>Chỉ sự mất tích hoàn toàn, không còn dấu vết gì, biệt tăm biệt tích.</td></tr>
+              <tr><td class="highlight">Già đòn non nhẽ</td><td>Dùng bạo lực nhiều nhưng lý lẽ thì thiếu, yếu. Dùng sức mạnh thô bạo thay cho lý lẽ chính đáng.</td></tr>
+              <tr><td class="highlight">Lá mặt lá trái</td><td>Người hai mặt: bên ngoài thân thiện nhưng bên trong thù nghịch, không thật lòng.</td></tr>
+              <tr><td class="highlight">Sống để dạ chết mang theo</td><td>Điều bí mật chỉ giữ riêng trong lòng, không bao giờ nói ra cho dù có chết.</td></tr>
+              <tr><td class="highlight">Mùa tay trong bị</td><td>Bí mật chuẩn bị, tính toán mưu mô mà không để lộ ra ngoài.</td></tr>
+              <tr><td class="highlight">Mượn gió bẻ măng</td><td>Nhân cơ hội thuận lợi (mượn sức người khác/hoàn cảnh) để trục lợi cho bản thân.</td></tr>
+              <tr><td class="highlight">Mạt cưa mướp đắng</td><td>Hai kẻ xấu giống nhau về bản chất, như đôi xứng đôi vừa lứa trong điều xấu.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- P2 BÀI 15 -->
+    <div class="exercise" id="bt-2-15">
+      <div class="exercise-header" onclick="toggle(this)">
+        <div class="ex-num">15</div>
+        <div class="ex-title">Phân tích và chữa lỗi dùng từ</div>
+        <span class="ex-chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="question-box">Phân tích và chữa lỗi dùng từ trong các câu dưới đây.</div>
+        <div class="answer-label">Đáp án</div>
+        <div class="ans-item">
+          <span class="word" style="min-width:80px">Câu gốc</span>
+          <span class="def"><em>"Anh lúc nào cũng là người giản dị nhưng phong mãnh liệt và cứng."</em></span>
+        </div>
+        <div class="ans-item">
+          <span class="word" style="min-width:80px">Lỗi</span>
+          <span class="def">Dùng sai từ: <strong>phong</strong> không phù hợp trong ngữ cảnh này; thiếu từ để câu hoàn chỉnh về nghĩa.</span>
+        </div>
+        <div class="ans-item">
+          <span class="word" style="min-width:80px">Sửa</span>
+          <span class="def"><em>"Anh lúc nào cũng là người giản dị nhưng có <strong>ý chí</strong> mãnh liệt và <strong>cứng rắn</strong>."</em></span>
+        </div>
+        <div class="prose" style="margin-top:.75rem">
+          <p><strong>Nguyên tắc chữa lỗi dùng từ:</strong></p>
+          <ul>
+            <li>Dùng từ phải đúng <strong>âm thanh</strong> (không lẫn lộn các từ gần âm)</li>
+            <li>Dùng từ phải đúng <strong>nghĩa</strong> (không dùng từ không hiểu rõ nghĩa)</li>
+            <li>Dùng từ phải đúng <strong>quy tắc ngữ pháp</strong> (danh từ, động từ, tính từ đúng chỗ)</li>
+            <li>Dùng từ phải đúng <strong>phong cách ngôn ngữ</strong> (không dùng từ nói trong văn viết)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- BACK TO TOP -->
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Lên đầu trang">↑</button>
+
+<script>
+// Toggle single exercise
+function toggle(header) {
+  header.classList.toggle('open');
+  const body = header.nextElementSibling;
+  body.classList.toggle('open');
+}
+
+// Expand all exercises
+function expandAll() {
+  document.querySelectorAll('.exercise-header').forEach(h => {
+    h.classList.add('open');
+    if (h.nextElementSibling) h.nextElementSibling.classList.add('open');
+  });
+}
+
+// Collapse all exercises
+function collapseAll() {
+  document.querySelectorAll('.exercise-header').forEach(h => {
+    h.classList.remove('open');
+    if (h.nextElementSibling) h.nextElementSibling.classList.remove('open');
+  });
+}
+
+// Mobile Drawer Controls
+const sidebarDrawer = document.getElementById('sidebarDrawer');
+const drawerOverlay = document.getElementById('drawerOverlay');
+
+function openDrawer() {
+  sidebarDrawer.classList.add('open');
+  drawerOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden'; // prevent background scrolling
+}
+
+function closeDrawer() {
+  sidebarDrawer.classList.remove('open');
+  drawerOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function toggleDrawer() {
+  if (sidebarDrawer.classList.contains('open')) {
+    closeDrawer();
+  } else {
+    openDrawer();
+  }
+}
+
+// Close drawer on ESC key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && sidebarDrawer.classList.contains('open')) {
+    closeDrawer();
+  }
+});
+
+// Close drawer automatically when clicking any sidebar link on mobile
+const sideLinks = document.querySelectorAll('.sidebar-link');
+sideLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 860) {
+      closeDrawer();
+    }
+  });
+});
+
+// Scroll progress & back to top visibility
+const readProgress = document.getElementById('readProgress');
+const backTopBtn = document.getElementById('back-top');
+
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY;
+  const maxScroll = document.body.scrollHeight - window.innerHeight;
+  if (maxScroll > 0) {
+    const pct = Math.min(100, Math.max(0, Math.round((scrolled / maxScroll) * 100)));
+    readProgress.style.width = pct + '%';
+  }
+
+  // Back to top button toggle
+  backTopBtn.classList.toggle('show', scrolled > 350);
+}, { passive: true });
+
+// Active sidebar link via IntersectionObserver
+const exercises = document.querySelectorAll('.exercise');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      sideLinks.forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { rootMargin: '-70px 0px -65% 0px' });
+
+exercises.forEach(ex => observer.observe(ex));
+</script>
+</body>
+</html>
